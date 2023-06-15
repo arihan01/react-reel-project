@@ -136,22 +136,6 @@ const App = () => {
     );
   };
 
-  const preloadImages = () => {
-    slides.forEach((slide) => {
-      if (slide.content.props.children[0].type === 'img') {
-        const image = new Image();
-        const imgElement = slide.content.props.children[0].props;
-        const imageUrl = imgElement.src;
-
-        image.src = imageUrl;
-      }
-    });
-  };
-
-  useEffect(() => {
-    preloadImages();
-  }, []);
-
   return (
     <div className="relative h-screen">
       {/* Render dot indicators */}
