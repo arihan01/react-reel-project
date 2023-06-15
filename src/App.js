@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slide from './components/Slide';
 
 const App = () => {
@@ -124,7 +124,21 @@ const App = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
+// start
+  useEffect(() => {
+    // Load the current slide from localStorage on component mount
+    const savedSlide = localStorage.getItem('currentSlide');
+    if (savedSlide) {
+      setCurrentSlide(Number(savedSlide));
+    }
+  }, []);
 
+  useEffect(() => {
+    // Save the current slide to localStorage whenever it changes
+    localStorage.setItem('currentSlide', currentSlide);
+  }, [currentSlide]);
+
+//end
 
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
