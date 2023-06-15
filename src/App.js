@@ -124,22 +124,36 @@ const App = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // useEffect(() => {
+  //   // Load the current slide from localStorage on component mount
+  //   const savedSlide = localStorage.getItem('currentSlide');
+  //   if (savedSlide) {
+  //     setCurrentSlide(Number(savedSlide));
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   // Save the current slide to localStorage whenever it changes
+  //   localStorage.setItem('currentSlide', currentSlide);
+  // }, [currentSlide]);
+
 // start
+
   useEffect(() => {
-    // Load the current slide from localStorage on component mount
-    const savedSlide = localStorage.getItem('currentSlide');
-    if (savedSlide) {
-      setCurrentSlide(Number(savedSlide));
+    // Load the slides from localStorage on component mount
+    const savedSlides = localStorage.getItem('slides');
+    if (savedSlides) {
+      setCurrentSlide(Number(savedSlides));
     }
   }, []);
 
   useEffect(() => {
-    // Save the current slide to localStorage whenever it changes
-    localStorage.setItem('currentSlide', currentSlide);
-  }, [currentSlide]);
+    // Save the slides to localStorage whenever they change
+    localStorage.setItem('slides', JSON.stringify(slides));
+  }, [slides]);
 
-//end
-
+// end
+  
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };
