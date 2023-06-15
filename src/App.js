@@ -124,16 +124,7 @@ const App = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const savedSlideIndex = localStorage.getItem('currentSlide');
-    if (savedSlideIndex) {
-      setCurrentSlide(Number(savedSlideIndex));
-    }
-  }, []);
 
-  useEffect(() => {
-    localStorage.setItem('currentSlide', currentSlide.toString());
-  }, [currentSlide]);
 
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -144,6 +135,22 @@ const App = () => {
       prevSlide === 0 ? slides.length - 1 : prevSlide - 1
     );
   };
+
+  const preloadImages = () => {
+    slides.forEach((slide) => {
+      if (slide.content.props.children[0].type === 'img') {
+        const image = new Image();
+        const imgElement = slide.content.props.children[0].props;
+        const imageUrl = imgElement.src;
+
+        image.src = imageUrl;
+      }
+    });
+  };
+
+  useEffect(() => {
+    preloadImages();
+  }, []);
 
   return (
     <div className="relative h-screen">
