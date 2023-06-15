@@ -95,19 +95,29 @@ const App = () => {
       id: 5,
       content: (
         <div className="flex flex-col items-center justify-center h-full">
-          <img src={require('./img/fifth.png')} alt='title' className='mb-20'/>
-          <img src={require('./img/li1.png')} alt='li1' className='pl-12 pr-12 pb-5 mt-20'/>
-          <img src={require('./img/plus.png')} alt='plus' className='pb-5'/>
-          <img src={require('./img/li2.png')} alt='li2' className='pl-12 pr-12 pb-5'/>
-          <img src={require('./img/li3.png')} alt='li3' className='pl-12 pr-12 pb-5'/>
-          <img src={require('./img/li4.png')} alt='li4' className='pl-12 pr-12 pb-5'/>
+          <img src={require('./img/fifth.png')} alt='title' className='mb-12' />
+          <img src={require('./img/li1.png')} alt='li1' className='pl-12 pr-12 pb-5 mt-12' />
+          <img src={require('./img/plus.png')} alt='plus' className='pb-5' />
+          <img src={require('./img/li2.png')} alt='li2' className='pl-12 pr-12 pb-5' />
+          <img src={require('./img/li3.png')} alt='li3' className='pl-12 pr-12 pb-5' />
+          <img src={require('./img/li4.png')} alt='li4' className='pl-12 pr-12' />
         </div>
       )
     },
     {
       id: 6,
       content: (
-        <div></div>
+        <div className="h-full flex flex-col justify-center items-center">
+          <div className="flex flex-col items-center mt-20">
+            <img src={require('./img/sixth-text.png')} alt="top 1" className="w-58 h-48 mb-4 mr-20" />
+            <div className="flex mt-10">
+              <img src={require('./img/sixth-text2.png')} alt="mid 1" className="w-36 h-26 mr-8" />
+              <img src={require('./img/sixth-text3.png')} alt="mid 2" className="w-28 h-30 ml-8" />
+            </div>
+          </div>
+          <div className="flex-grow"></div>
+          <img src={require('./img/sixth.png')} alt="bottom 4" className="w-full mt-4" />
+        </div>
       )
     }
   ];
