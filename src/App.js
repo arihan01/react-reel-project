@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Slide from './components/Slide';
+import Slide from './Slide';
 
 const App = () => {
   const slides = [
