@@ -201,24 +201,22 @@ const App = () => {
       });
     };
 
-    // Add event listeners to each image element
     slides.forEach((slide) => {
       const imageElements = Array.from(
         document.querySelectorAll(`#slide-${slide.id} img`)
       );
       imageElements.forEach((img) => {
-        img.addEventListener('load', imageLoadHandler);
+        img.addEventListener('load', imageLoadHandler); // Attach the load event listener
       });
     });
 
-    // Clean up event listeners
     return () => {
       slides.forEach((slide) => {
         const imageElements = Array.from(
           document.querySelectorAll(`#slide-${slide.id} img`)
         );
         imageElements.forEach((img) => {
-          img.removeEventListener('load', imageLoadHandler);
+          img.removeEventListener('load', imageLoadHandler); // Remove the load event listener
         });
       });
     };
