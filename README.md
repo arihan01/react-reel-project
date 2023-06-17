@@ -46,4 +46,4 @@ The project aims to provide a visually appealing and interactive slideshow exper
   http://localhost:3000
   ```
 
-> Running aster branch version of the project can be found ![here](https://temp-wip.vercel.app/) .
+> Running master branch version of the project can be found ![here](https://temp-wip.vercel.app/) .
