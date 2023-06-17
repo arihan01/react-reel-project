@@ -215,8 +215,8 @@ const App = () => {
   return (
     <div className="relative h-screen">
       {!imagesLoaded && (
-        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-200">
-          Loading...
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-purple">
+          viamagus
         </div>
       )}
 
