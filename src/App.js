@@ -184,32 +184,6 @@ const App = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [showProject, setShowProject] = useState(false);
-
-  useEffect(() => {
-    const imageContext = require.context('./img', false, /\.png$/);
-    const imageUrls = imageContext.keys().map((key) => imageContext(key).default);
-
-    const imagePromises = imageUrls.map((url) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = url.default;
-        img.onload = resolve;
-        img.onerror = reject;
-      });
-    });
-
-    Promise.all(imagePromises)
-      .then(() => {
-        setImagesLoaded(true);
-        setShowProject(true); // Set showProject to true when images are loaded
-      })
-      .catch(() => {
-        setImagesLoaded(true);
-        setShowProject(true); // Even if some images fail to load, still show the project
-      });
-  }, []);
 
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -250,17 +224,12 @@ const App = () => {
         </button>
       </div>
 
-      {/* Render active slide */}
-      {imagesLoaded && showProject ? (
-        <div className="flex items-center justify-center h-full">
-          <Slide
-            key={slides[currentSlide].id}
-            content={slides[currentSlide].content}
-          />
-        </div>
-      ) : (
-        <div>Loading...</div>
-      )}
+      <div className="flex items-center justify-center h-full">
+        <Slide
+          key={slides[currentSlide].id}
+          content={slides[currentSlide].content}
+        />
+      </div>
     </div>
   );
 };
