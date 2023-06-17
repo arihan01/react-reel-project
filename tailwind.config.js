@@ -4,8 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ["'Urbanist'", "sans-serif'"],
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography")
+  ],
 }
 

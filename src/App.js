@@ -161,7 +161,7 @@ const App = () => {
           <div className="flex justify-center mt-10 mr-11 pb-10">
             <a
               href="mailto:hello@viamagus.com"
-              className="inline-block bg-purple-500 rounded-full p-2 text-white text-xl"
+              className="inline-block bg-purple-500 rounded-full p-3 text-white font-Urbanist"
             >
               hello@viamagus.com
             </a>
