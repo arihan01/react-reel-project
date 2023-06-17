@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import Preloader from './Preloader';
 import Slide from './Slide';
 
 const App = () => {
@@ -127,12 +126,12 @@ const App = () => {
         <div className="flex flex-col items-center justify-center h-full">
           <img
             src={require('./img/s7-top.png')}
-            alt="Image 1"
+            alt=" 1"
             className="w-90 h-30 mb-4 pl-10 pr-10 mt-20"
           />
           <img
             src={require('./img/s7-mid.png')}
-            alt="Image 2"
+            alt=" 2"
             className="w-40 h-40 relative -top-24"
           />
           <svg width="300" height="400" viewBox="0 0 348 550" fill="none" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink">
@@ -186,6 +185,7 @@ const App = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [showProject, setShowProject] = useState(false);
 
   useEffect(() => {
     const imageContext = require.context('./img', false, /\.png$/);
@@ -201,8 +201,14 @@ const App = () => {
     });
 
     Promise.all(imagePromises)
-      .then(() => setImagesLoaded(true))
-      .catch(() => setImagesLoaded(true));
+      .then(() => {
+        setImagesLoaded(true);
+        setShowProject(true); // Set showProject to true when images are loaded
+      })
+      .catch(() => {
+        setImagesLoaded(true);
+        setShowProject(true); // Even if some images fail to load, still show the project
+      });
   }, []);
 
   const goToNextSlide = () => {
@@ -245,7 +251,7 @@ const App = () => {
       </div>
 
       {/* Render active slide */}
-      {imagesLoaded ? (
+      {imagesLoaded && showProject ? (
         <div className="flex items-center justify-center h-full">
           <Slide
             key={slides[currentSlide].id}
@@ -254,8 +260,8 @@ const App = () => {
         </div>
       ) : (
         <div>Loading...</div>
-      )}    
-      </div>
+      )}
+    </div>
   );
 };
 
