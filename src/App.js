@@ -184,6 +184,45 @@ const App = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false); // Add the isLoaded state
+
+  useEffect(() => {
+    const imageLoadHandler = () => {
+      setIsLoaded((prevIsLoaded) => {
+        // Check if all images have loaded
+        const allImagesLoaded = slides.every((slide) => {
+          const imageElements = Array.from(
+            document.querySelectorAll(`#slide-${slide.id} img`)
+          );
+          return imageElements.every((img) => img.complete);
+        });
+
+        return allImagesLoaded;
+      });
+    };
+
+    // Add event listeners to each image element
+    slides.forEach((slide) => {
+      const imageElements = Array.from(
+        document.querySelectorAll(`#slide-${slide.id} img`)
+      );
+      imageElements.forEach((img) => {
+        img.addEventListener('load', imageLoadHandler);
+      });
+    });
+
+    // Clean up event listeners
+    return () => {
+      slides.forEach((slide) => {
+        const imageElements = Array.from(
+          document.querySelectorAll(`#slide-${slide.id} img`)
+        );
+        imageElements.forEach((img) => {
+          img.removeEventListener('load', imageLoadHandler);
+        });
+      });
+    };
+  }, [slides]);
 
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -194,6 +233,10 @@ const App = () => {
       prevSlide === 0 ? slides.length - 1 : prevSlide - 1
     );
   };
+
+  if (!isLoaded) {
+    return <div>Loading...</div>; // Display a loading indicator
+  }
 
   return (
     <div className="relative h-screen">
