@@ -215,8 +215,11 @@ const App = () => {
   return (
     <div className="relative h-screen">
       {!imagesLoaded && (
-        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-purple-500">
-          viamagus
+        // <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-purple-500">
+        //   viamagus
+        // </div>
+        <div className="flex items-center justify-center h-full">
+          <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-purple-500"></div>
         </div>
       )}
 
