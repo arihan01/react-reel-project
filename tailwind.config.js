@@ -6,12 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ["'Urbanist'", "sans-serif'"],
-      }
+        urbanist: ["Urbanist", "sans-serif"],
+      },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography")
-  ],
+  plugins: [],
 }
 
