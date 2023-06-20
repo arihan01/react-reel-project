@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         urbanist: ["Urbanist", "sans-serif"],
       },
+      colors: {
+        'btnPurple' : '#F0DFFF',
+        'btnWhite' : '#F6F6F7',
+      },
     },
   },
   plugins: [],
