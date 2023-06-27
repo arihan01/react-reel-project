@@ -247,11 +247,11 @@ const App = () => {
   useEffect(() => {
     const imagePromises = slides.map(slide =>
       Array.from(slide.content.props.children)
-        .filter(child => child.type === 'AnimatedImage')
-        .map(AnimatedImage => new Promise(resolve => {
+        .filter(child => child.type === 'img')
+        .map(img => new Promise(resolve => {
           const imageElement = new Image();
           imageElement.onload = resolve;
-          imageElement.src = AnimatedImage.props.src;
+          imageElement.src = img.props.src;
         }))
     );
 
