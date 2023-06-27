@@ -241,6 +241,7 @@ const App = () => {
     }
   ];
 
+  
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
