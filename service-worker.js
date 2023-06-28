@@ -14,7 +14,7 @@ registerRoute(
     plugins: [
       new ExpirationPlugin({
         maxEntries: 60,
-        maxAgeSeconds: 30 * 24 * 60 * 60, // Cache images for 30 days
+        maxAgeSeconds: 365 * 24 * 60 * 60, // Cache images for 30 days
       }),
     ],
   })
