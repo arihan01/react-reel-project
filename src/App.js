@@ -85,7 +85,7 @@ const App = () => {
       content: (
         <div className="flex flex-col items-center justify-center h-full flex-grow">
           <img
-            src={require('./img/second.png')}
+            src={require('./img/second.webp')}
             alt="Sample 2"
             className="w-full h-full"
           />
