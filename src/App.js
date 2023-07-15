@@ -39,7 +39,7 @@ const container = {
 const item = {
   initial: {
     opacity: 0,
-    y: -20, // Move each item up initially to hide them
+    y: -40, // Move each item up initially to hide them
   },
   animate: {
     opacity: 1,
