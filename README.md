@@ -44,4 +44,4 @@ This a personal project that replicates the [Viamagus Reels Website](https://ree
   http://localhost:3000
   ```
 
-> Running master branch version of the project can be found [here](https://temp-wip.vercel.app/) .
+> Running master branch version of the project can be found [here](https://react-story-project-13ef9.web.app/) (for mobile screens only).
