@@ -1,16 +1,6 @@
 # React Stories
 
-This project is an interactive slideshow application built with React.
-
-The project aims to provide a visually appealing and interactive slideshow experience. It allows users to navigate through different slides, each containing unique content such as images and SVG graphics.
-
-## Features
-
-- Responsive design optimized for mobile screens
-- Smooth navigation between slides
-- Dynamic loading of images for enhanced performance
-- Dot indicators to indicate the current slide
-- Navigation buttons to move to the next or previous slide
+This a personal project that replicates the [Viamagus Reels Website](https://reels.viamagus.com/financial-application.html) using ReactJS.
 
 ## Installation
 
@@ -46,4 +36,4 @@ The project aims to provide a visually appealing and interactive slideshow exper
   http://localhost:3000
   ```
 
-> Running master branch version of the project can be found [here](https://temp-wip.vercel.app/) .
+> Running master branch version of the project can be found [here](https://react-story-project-13ef9.web.app/) (for mobile screens only).
