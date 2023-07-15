@@ -1,8 +1,6 @@
 # React Stories
 
-This project is an interactive slideshow application built with React.
-
-The project aims to provide a visually appealing and interactive slideshow experience. It allows users to navigate through different slides, each containing unique content such as images and SVG graphics.
+This a personal project that replicates [Viamagus Reels Website](https://reels.viamagus.com/financial-application.html) using ReactJS.
 
 ## Features
 
