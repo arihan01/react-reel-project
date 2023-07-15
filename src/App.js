@@ -4,23 +4,47 @@ import styled from 'styled-components';
 import * as animate from './animations';
 import { motion } from 'framer-motion';
 
+// const container = {
+//   hidden: { opacity: 1 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       delayChildren: 0,
+//       staggerChildren: 0.7,
+//     }
+//   }
+// };
+
+// const item = {
+//   hidden: { opacity: 0, translateY: -80},
+//   visible: {
+//     translateY: 0,
+//     opacity: 1
+//   }
+// };
+
 const container = {
-  hidden: { opacity: 1 },
-  visible: {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
     opacity: 1,
     transition: {
-      delayChildren: 1,
-      staggerChildren: 1,
-    }
-  }
+      delayChildren: 0, // Delay children animations
+      staggerChildren: 0.8, // Stagger the animation between children
+    },
+  },
 };
 
 const item = {
-  hidden: { opacity: 0, translateY: -80},
-  visible: {
-    translateY: 0,
-    opacity: 1
-  }
+  initial: {
+    opacity: 0,
+    y: -20, // Move each item up initially to hide them
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
 };
 
 const AnimatedImage = styled.img`
@@ -131,8 +155,8 @@ const App = () => {
             <motion.div
               className="container"
               variants={container}
-              initial="hidden"
-              animate="visible"
+              initial="initial"
+              animate="animate"
             >
               <motion.img src={require('./img/s5-li-1.webp')} alt='li1' className='item pl-14 pr-14 pb-2' variants={item} />
               <motion.img src={require('./img/s5-li-plus.png')} alt='plus' className='item pl-14 pr-14 pb-2' variants={item} />
