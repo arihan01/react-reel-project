@@ -31,7 +31,7 @@ const container = {
     opacity: 1,
     transition: {
       delayChildren: 0, // Delay children animations
-      staggerChildren: 0.8, // Stagger the animation between children
+      staggerChildren: 0.9, // Stagger the animation between children
     },
   },
 };
@@ -44,6 +44,9 @@ const item = {
   animate: {
     opacity: 1,
     y: 0,
+    transition: {
+      duration: 0.7,
+    },
   },
 };
 
