@@ -1,6 +1,6 @@
 # React Stories
 
-This a personal project that replicates [Viamagus Reels Website](https://reels.viamagus.com/financial-application.html) using ReactJS.
+This a personal project that replicates the [Viamagus Reels Website](https://reels.viamagus.com/financial-application.html) using ReactJS.
 
 ## Features
 
