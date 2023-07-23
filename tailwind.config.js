@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         'btnPurple' : '#F0DFFF',
         'btnWhite' : '#F6F6F7',
+        'darkG' : '#1F1F1F',
       },
     },
   },
