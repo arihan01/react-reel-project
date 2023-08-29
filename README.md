@@ -7,13 +7,13 @@ This a personal project that replicates the [Viamagus Reels Website](https://ree
 1. Clone the repository:
 
   ```bash
-  git clone https://github.com/arihan01/react-story-project.git
+  git clone https://github.com/arihan01/react-reel-project.git
   ```
 
 2. Navigate to the project directory:
 
   ```bash
-  cd react-story-project
+  cd react-reel-project
   ```
 
 3. Install the dependencies:
