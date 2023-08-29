@@ -4,52 +4,6 @@ import styled from 'styled-components';
 import * as animate from './animations';
 import { motion } from 'framer-motion';
 
-// const container = {
-//   hidden: { opacity: 1 },
-//   visible: {
-//     opacity: 1,
-//     transition: {
-//       delayChildren: 0,
-//       staggerChildren: 0.7,
-//     }
-//   }
-// };
-
-// const item = {
-//   hidden: { opacity: 0, translateY: -80},
-//   visible: {
-//     translateY: 0,
-//     opacity: 1
-//   }
-// };
-
-const container = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0, // Delay children animations
-      staggerChildren: 0.9, // Stagger the animation between children
-    },
-  },
-};
-
-const item = {
-  initial: {
-    opacity: 0,
-    y: -40, // Move each item up initially to hide them
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
 const AnimatedImage = styled.img`
   animation: ${props => props.animation} 1.3s cubic-bezier(0.19, 1, 0.22, 1);
 `;
@@ -156,16 +110,16 @@ const App = () => {
           </AnimatedSvg>
           <div className="mt-40 flex flex-col items-center justify-center">
             <motion.div
-              className="container"
-              variants={container}
+              className="animate.rectList"
+              variants={animate.rectList}
               initial="initial"
               animate="animate"
             >
-              <motion.img src={require('./img/s5-li-1.webp')} alt='li1' className='item pl-14 pr-14 pb-2' variants={item} />
-              <motion.img src={require('./img/s5-li-plus.png')} alt='plus' className='item pl-14 pr-14 pb-2' variants={item} />
-              <motion.img src={require('./img/s5-li-2.webp')} alt='li2' className='item pl-14 pr-14 pb-2' variants={item} />
-              <motion.img src={require('./img/s5-li-3.webp')} alt='li3' className='item pl-14 pr-14 pb-2' variants={item} />
-              <motion.img src={require('./img/s5-li-4.webp')} alt='li4' className='item pl-14 pr-14' variants={item} />
+              <motion.img src={require('./img/s5-li-1.webp')} alt='li1' className='item pl-14 pr-14 pb-2' variants={animate.rectItem} />
+              <motion.img src={require('./img/s5-li-plus.png')} alt='plus' className='item pl-14 pr-14 pb-2' variants={animate.rectItem} />
+              <motion.img src={require('./img/s5-li-2.webp')} alt='li2' className='item pl-14 pr-14 pb-2' variants={animate.rectItem} />
+              <motion.img src={require('./img/s5-li-3.webp')} alt='li3' className='item pl-14 pr-14 pb-2' variants={animate.rectItem} />
+              <motion.img src={require('./img/s5-li-4.webp')} alt='li4' className='item pl-14 pr-14' variants={animate.rectItem} />
             </motion.div>
           </div>
         </div>

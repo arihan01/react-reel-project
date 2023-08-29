@@ -79,3 +79,30 @@ export const smallUtoD = keyframes`
     opacity: 1;
   }
 `;
+
+export const rectList = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0, // Delay children animations
+      staggerChildren: 0.9, // Stagger the animation between children
+    },
+  },
+};
+
+export const rectItem = {
+  initial: {
+    opacity: 0,
+    y: -40, // Move each item up initially to hide them
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
